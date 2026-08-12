@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتب المحامي أحمد عبد المغني | للمحاماة والاستشارات القانونية</title>
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- خط تجوال الاحترافي من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d1b2a;
+            --secondary-color: #1b263b;
+            --accent-color: #c5a059;
+            --light-color: #f8f9fa;
+            --dark-color: #111111;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* الهيدر وقائمة التنقل */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* قسم البطل / Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 27, 42, 0.88), rgba(13, 27, 42, 0.88)), 
+                        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop') center/cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+        /* الأقسام العامة */
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            display: block;
+            margin: 10px auto 0;
+        }
+
+        /* شبكة الخدمات والقضايا */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-color);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card ul li i {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+
+        /* معرض الصور الحية */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            height: 240px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: linear-gradient(transparent, rgba(13, 27, 42, 0.9));
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* التواصل والفوتر */
+        .contact-box {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-item i {
+            color: var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* زر واتساب العائم */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- القائمة العلويّة -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-scale-balanced"></i>
+                مكتب المحامي أحمد عبد المغني
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">عن المكتب</a></li>
+                <li><a href="#services">خدماتنا والقضايا</a></li>
+                <li><a href="#gallery">المعارض والأنشطة</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي (البطل) -->
+    <section class="hero" id="about">
+        <div class="hero-container">
+            <!-- صورتك الشخصية الأصلية -->
+            <img src="https://i.ibb.co/9knfBtgb/1000000422.jpg" alt="المحامي أحمد عبد المغني" class="profile-img">
+            <h1>المحامي أحمد عبد المغني</h1>
+            <p>مستشار قانوني ومحامٍ متخصص في جميع أنواع القضايا، صياغة العقود التجارية والمدنية، وتأسيس الشركات بخبرة وكفاءة عالية.</p>
+            <a href="https://wa.me/201226606932" class="btn" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> استشارة قانونية فورية
+            </a>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات والقضايا -->
+    <section class="section" id="services">
+        <h2 class="section-title">التخصصات والخدمات القانونية</h2>
+        <div class="services-grid">
+            
+            <!-- القضايا -->
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-gavel"></i></div>
+                <h3>جميع أنواع القضايا</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> القضايا الجنائية والجنح</li>
+                    <li><i class="fa-solid fa-check"></i> القضايا المدنية والتجارية</li>
+                    <li><i class="fa-solid fa-check"></i> المنازعات العمالية والعقارية</li>
+                    <li><i class="fa-solid fa-check"></i> قضايا الأحوال الشخصية والأسرة</li>
+                </ul>
+            </div>
+
+            <!-- صياغة العقود -->
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <h3>كتابة وصياغة العقود</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> عقود البيع والشراء والإيجار</li>
+                    <li><i class="fa-solid fa-check"></i> عقود الشراكة والاتفاقيات التجارية</li>
+                    <li><i class="fa-solid fa-check"></i> عقود العمل والتوظيف</li>
+                    <li><i class="fa-solid fa-check"></i> تدقيق ومراجعة العقود القانونية</li>
+                </ul>
+            </div>
+
+            <!-- تأسيس الشركات -->
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-building"></i></div>
+                <h3>تأسيس الشركات</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> إنهاء إجراءات التأسيس والترخيص</li>
+                    <li><i class="fa-solid fa-check"></i> صياغة عقود التأسيس والأنظمة الأساسية</li>
+                    <li><i class="fa-solid fa-check"></i> تحويل الكيانات القانونية للشركات</li>
+                    <li><i class="fa-solid fa-check"></i> تقديم الاستشارات المستمرة للشركات</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- قسم المعرض واللقطات الحية -->
+    <section class="section" id="gallery">
+        <h2 class="section-title">صور حية من الميدان القانوني</h2>
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop" alt="ميزان العدالة">
+                <div class="gallery-caption">رمز العدالة وسيادة القانون</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?q=80&w=800&auto=format&fit=crop" alt="قاعة المحكمة">
+                <div class="gallery-caption">تمثيل قانوني أمام المحاكم</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=800&auto=format&fit=crop" alt="الملفات والعقود">
+                <div class="gallery-caption">دراسة دقيقة للملفات والعقود</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section class="section" id="contact">
+        <div class="contact-box">
+            <h3>هل تحتاج إلى استشارة قانونية؟</h3>
+            <p>التواصل المباشر مع مكتب المحامي أحمد عبد المغني لحجز موعد استشارة أو دراسة قضيتك.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:01226606932">01226606932</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:mogha911@gmail.com">mogha911@gmail.com</a>
+                </div>
+            </div>
+            <a href="https://wa.me/201226606932" class="btn" target="_blank">تواصل معنا الآن عبر واتساب</a>
+        </div>
+    </section>
+
+    <!-- زر واتساب العائم -->
+    <a href="https://wa.me/201226606932" class="whatsapp-float" target="_blank" title="تواصل عبر واتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 مكتب المحامي أحمد عبد المغني للمحاماة والاستشارات القانونية.</p>
+    </footer>
+
+</body>
+</html>
